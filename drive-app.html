@@ -9,6 +9,21 @@
         <input type="file" id="files" name="files[]"
           on-change="handleFilePick" multiple="">
       </div>
+      <paper-toolbar id="dropzone-bar">
+        <div class="flex">
+          <span>Auto-upload</span>
+          <paper-toggle-button oncaption="On" offcaption="Off" checked="{{autoUpload}}"></paper-toggle-button>
+        </div>
+        
+        <div class="flex">
+          <button id="upload" onclient="manualUpload" style$="{{computeStyle(autoupload)}}">Upload files</button>
+        </div>
+        
+        <div class="flex"></div>
+        <div>
+          <div id="status">Ready</div>
+        </div>
+      </paper-toolbar>
     </div>
   </template>
   <script>
